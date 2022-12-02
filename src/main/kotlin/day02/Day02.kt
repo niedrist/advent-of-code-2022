@@ -1,3 +1,6 @@
+package day02
+
+import BasicDay
 import util.FileReader
 
 val d = FileReader.asStrings("day02.txt").map { it.split(" ") }.map { Pair(it[0].single(), it[1].single()) }
@@ -8,7 +11,6 @@ object Day02 : BasicDay() {
     override fun part1() = d.sumOf { it.winScore() + it.pairScore() }
 
     override fun part2() = d.sumOf { with(calcNewPair(it)) { winScore() + pairScore() } }
-
 }
 
 private fun Pair<Char, Char>.winScore() =

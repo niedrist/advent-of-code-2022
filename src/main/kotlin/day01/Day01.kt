@@ -9,9 +9,8 @@ val d = FileReader.readResource("day01.txt")
 
 fun main() = Day01.run()
 
-
 object Day01 : BasicDay() {
     override fun part1() = d.maxOf { it }
 
-    override fun part2() = d.map { it }.sorted().takeLast(3).sum()
+    override fun part2() = d.sorted().takeLast(3).sum()
 }
