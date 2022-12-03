@@ -13,8 +13,8 @@ object Day02 : BasicDay() {
     override fun part2() = d.sumOf { with(calcNewPair(it)) { winScore() + pairScore() } }
 }
 
-private fun Pair<Char, Char>.winScore() =
-    when (this.first) {
+private fun Pair<Char, Char>.winScore(): Int {
+    return when (this.first) {
         'A' -> when (this.second) {
             'X' -> 3
             'Y' -> 6
@@ -35,6 +35,7 @@ private fun Pair<Char, Char>.winScore() =
         }
         else -> 0
     }
+}
 
 
 private fun Pair<Char, Char>.pairScore() = when (this.second) {
