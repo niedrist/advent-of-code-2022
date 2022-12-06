@@ -12,9 +12,9 @@ val commands = d[1].split("\n").map {
     }
 }
 
-fun main() = Day01.run()
+fun main() = Day05.run()
 
-object Day01 : BasicDay() {
+object Day05 : BasicDay() {
     override fun part1() = readStacks().apply {
         commands.forEach { command ->
             repeat(command.amount) {
